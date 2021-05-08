@@ -4,9 +4,6 @@
 #include <iostream>
 #include <vector>
 #include <regex>
-//A->Ba|Bb,B->a|b
-
-//
 
 class TypeThreeGrammar {
     std::vector<std::string>(non_terminals_);
