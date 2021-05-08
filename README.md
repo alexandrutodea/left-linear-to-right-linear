@@ -11,4 +11,4 @@ Left Linear to Right Linear functions in a relatively straightforward manner. It
 As input gets collected from the user, the application constructs a left linear grammar in the background, which it will convert into a right linear one at the end. Suppose that during the grammar construction phase, the input given by the user causes the grammar to become non-type-3. In that case, the program will throw an appropriate error and ask the user to re-enter the symbol or production rule which has caused the error.
 \
 \
-![](demo-three.gif)
+![](demo-3.gif)
