@@ -1,4 +1,4 @@
-# Left Linear to Right Linear Grammar Converter
+# Left Linear to Right Linear
 Left Linear to Right Linear is a simple C++ console application for converting a left linear type three grammar into a right linear one.
 \
 \
