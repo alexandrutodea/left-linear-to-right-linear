@@ -8,4 +8,4 @@ It functions in a relatively straightforward manner. It only asks the user to en
 Below, you can find a demo of the application:
 \
 \
-![](demo_two.gif)
+![](demo-two.gif)
