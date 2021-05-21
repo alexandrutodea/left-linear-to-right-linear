@@ -288,9 +288,11 @@ void TypeThreeGrammar::display_grammar() {
   }
   std::cout << std::endl << "Terminals:" << std::endl;
   for (int i = 0; i < terminals_.size(); i++) {
-    std::cout << terminals_[i];
+    if (terminals_[i] != "λ") {
+      std::cout << terminals_[i];
+    }
     int size = terminals_.size();
-    if (i < size - 1) {
+    if (i < size - 1 and terminals_[i] != "λ") {
       std::cout << ", ";
     }
   }
@@ -302,12 +304,6 @@ void TypeThreeGrammar::display_grammar() {
   for (int i = 0; i < production_rules_.size(); i++) {
     if (production_rules_[i].get_rside_ts().length() == 0
     and production_rules_[i].get_no_nts()) {
-      for (const std::string& t : terminals_) {
-        if (t != "λ") {
-          insert_terminal("λ");
-          break;
-        }
-      }
       production_rules_.erase(production_rules_.begin()+i);
       TypeThreeRule new_rule = TypeThreeRule(production_rules_[i]
         .get_left_side(), "λ");
@@ -362,7 +358,7 @@ TypeThreeGrammar TypeThreeGrammar::convert_to_right_linear() {
       insert_production_rule("S0", starting_point);
       set_starting_point("S0");
       right_linear_grammar.set_starting_point("S0");
-      std::cout << step_counter << ") Added rule " << "S0 ->" <<
+      std::cout << step_counter << ") Added rule " << "S0->"<<
       starting_point << " as " << starting_point << " is on the right hand "
                                                     "side of rule " <<
       prod_rule.get_left_side() << "->" << prod_rule.get_right_side() <<
@@ -425,7 +421,7 @@ TypeThreeGrammar TypeThreeGrammar::convert_to_right_linear() {
       std::cout << step_counter << ") Applied rule 4 on " << prod_rule
       .get_left_side() << "->" << prod_rule.get_right_side() << ": ";
       if (prod_rule.get_rside_ts().length() == 0) {
-        std::cout << prod_rule.get_rside_nt() << "->λ" << std::endl;
+        std::cout << prod_rule.get_rside_nt() << "-> λ" << std::endl;
       } else {
         std::cout << prod_rule.get_rside_nt() << "->" <<
         prod_rule.get_rside_ts() << std::endl;

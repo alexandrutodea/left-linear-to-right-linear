@@ -163,6 +163,7 @@ int main() {
   TypeThreeGrammar grammar;
   std::regex comma_re(",");
   std::string a_string;
+  grammar.insert_terminal("λ");
   bool go_on = true;
   while (go_on) {
     get_grammar_input('n', grammar, go_on);
